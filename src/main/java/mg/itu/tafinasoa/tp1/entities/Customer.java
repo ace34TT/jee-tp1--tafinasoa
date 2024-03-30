@@ -168,11 +168,11 @@ public class Customer implements Serializable {
         this.creditLimit = creditLimit;
     }
 
-    public Discount getDiscountCode() {
+    public Discount getDiscount() {
         return discount;
     }
 
-    public void setDiscountCode(Discount discount) {
+    public void setDiscount(Discount discount) {
         this.discount = discount;
     }
 
