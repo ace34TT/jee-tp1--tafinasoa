@@ -53,6 +53,7 @@ public class CustomerManager {
 
     @Transactional
     public Customer update(Customer customer) {
+        System.out.println(customer.toString());
         return em.merge(customer);
     }
 

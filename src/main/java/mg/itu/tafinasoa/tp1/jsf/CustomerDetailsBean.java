@@ -41,6 +41,7 @@ public class CustomerDetailsBean implements Serializable {
     }
 
     public String update() {
+       
         customer = customerManager.update(customer);
         return "customerList";
     }
