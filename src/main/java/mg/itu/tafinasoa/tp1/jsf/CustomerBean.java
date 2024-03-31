@@ -10,31 +10,34 @@ import jakarta.inject.Inject;
 import java.io.Serializable;
 import java.util.List;
 import mg.itu.tafinasoa.tp1.entities.Customer;
-import mg.itu.tafinasoa.tp1.manager.CustomerManager;
+import mg.itu.tafinasoa.tp1.services.CustomerManager;
+
 
 /**
  *
  * @author aceky
  */
-
 // "Backing bean pour la page JSF customerList."
-@Named(value = "customerBean")  
-@ViewScoped  
-public class CustomerBean implements Serializable {  
-  private List<Customer> customerList;  
+@Named(value = "customerBean")
+@ViewScoped
+public class CustomerBean implements Serializable {
 
-  @Inject
-  private CustomerManager customerManager;  
-        
-  public CustomerBean() {  }  
-        
-  /** 
-   * Retourne la liste des clients pour affichage dans une DataTable.
-   */  
-  public List<Customer> getCustomers() {
-    if (customerList == null) {
-      customerList = customerManager.getAllCustomers();
+    private List<Customer> customerList;
+
+    @Inject
+    private CustomerManager customerManager;
+
+    public CustomerBean() {
     }
-    return customerList;
-  }  
+
+    /**
+     * Retourne la liste des clients pour affichage dans une DataTable.
+     */
+    public List<Customer> getCustomers() {
+        if (customerList == null) {
+            customerList = customerManager.getAllCustomers();
+        }
+        System.out.println(customerList.size());
+        return customerList;
+    }
 }
